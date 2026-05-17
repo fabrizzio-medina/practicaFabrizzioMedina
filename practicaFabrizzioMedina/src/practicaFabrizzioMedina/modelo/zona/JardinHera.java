@@ -1,5 +1,7 @@
 package practicaFabrizzioMedina.modelo.zona;
 
+import practicaFabrizzioMedina.minijuegos.acertijos.Acertijo;
+import practicaFabrizzioMedina.minijuegos.interfazDelMinijuego.Minijuego;
 import practicaFabrizzioMedina.modelo.jugador.Jugador;
 
 import java.util.Scanner;
@@ -37,10 +39,10 @@ public class JardinHera extends Zona{
         System.out.println("Si lo resuelves bien con ese resultado podras ingresar al inframundo de Hades");
         System.out.println("\r\n");
 
-        int r = sc.nextInt();
-        sc.nextLine();
+        Minijuego juegoActual = new Acertijo();
+        boolean esGanador = juegoActual.jugar();
 
-        if (r == 666) {
+        if(esGanador){
             marcarComoCompletada();
             return true;
         }

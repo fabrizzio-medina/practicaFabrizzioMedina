@@ -1,5 +1,7 @@
 package practicaFabrizzioMedina.modelo.zona;
 
+import practicaFabrizzioMedina.minijuegos.acertijos.Acertijo;
+import practicaFabrizzioMedina.minijuegos.interfazDelMinijuego.Minijuego;
 import practicaFabrizzioMedina.modelo.jugador.Jugador;
 
 import java.util.Scanner;
@@ -26,11 +28,13 @@ public class InframundoHades extends  Zona {
                         + "—Espartano, oí que eres un ser difícil de deshacer, pero estás en mi mundo, en mi infierno.\r\n"
                         + "Solo te dejé una adivinanza en la cual tienes que adivinar un nombre.");
         System.out.println("\r\n");
-        System.out.println("Soy un perro de tres cabezas que custodia la entrada al inframundo.\r\n"
+        System.out.println("Soy un perro de tres cabezas que custodia la entrada al inframundo.\n"
                 + "Nadie puede entrar sin mi consentimiento ¿Quien soy?");
-        String r = sc.nextLine();
 
-        if (r.contains("cerbero") || r.contains("cerberus") || r.contains("cancerbero")) {
+        Minijuego juegoActual = new Acertijo();
+        boolean esGanador = juegoActual.jugar();
+
+        if(esGanador){
             marcarComoCompletada();
             return true;
         }

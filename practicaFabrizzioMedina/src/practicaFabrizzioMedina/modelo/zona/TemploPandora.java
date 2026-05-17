@@ -1,5 +1,7 @@
 package practicaFabrizzioMedina.modelo.zona;
 
+import practicaFabrizzioMedina.minijuegos.acertijos.Acertijo;
+import practicaFabrizzioMedina.minijuegos.interfazDelMinijuego.Minijuego;
 import practicaFabrizzioMedina.modelo.jugador.Jugador;
 
 import java.util.Scanner;
@@ -44,14 +46,10 @@ public class TemploPandora extends Zona{
         System.out.println("Tu misión es descifrar la palabra de esta adivinanza, para abrir la caja de pandora\r\n"
                 + "pero a la vez esta palabra es la debilidad de los Dioses");
         System.out.println("\r\n");
-        System.out.println(
-                "Soy invisible, pero todos me sienten.\r\n" + "Puedo paralizar al valiente y despertar al cobarde.\r\n"
-                        + "A veces me enfrentas, a veces me huyes,\r\n"
-                        + "y aunque nadie me puede tocar, mi poder es real.\r\n" + "¿Qué soy?");
+        Minijuego juegoActual = new Acertijo();
+        boolean esGanador = juegoActual.jugar();
 
-        String r = sc.nextLine();
-
-        if (r.toLowerCase().contains("el miedo") || r.toLowerCase().contains("miedo")) {
+        if(esGanador){
             marcarComoCompletada();
             return true;
         }
