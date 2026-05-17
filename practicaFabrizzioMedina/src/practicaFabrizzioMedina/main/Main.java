@@ -1,5 +1,7 @@
 package practicaFabrizzioMedina.main;
 
+import practicaFabrizzioMedina.juego.Juego;
+
 import java.util.Scanner;
 
 public class Main {

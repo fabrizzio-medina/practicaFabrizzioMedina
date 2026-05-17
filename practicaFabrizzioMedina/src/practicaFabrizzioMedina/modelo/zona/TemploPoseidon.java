@@ -1,10 +1,12 @@
 package practicaFabrizzioMedina.modelo.zona;
 
+import practicaFabrizzioMedina.minijuegos.Minijuego;
+import practicaFabrizzioMedina.minijuegos.acertijos.Acertijo;
 import practicaFabrizzioMedina.modelo.jugador.Jugador;
 
 import java.util.Scanner;
 
-public class TemploPoseidon extends Zona{
+public class TemploPoseidon extends Zona {
 
 
     public TemploPoseidon(Scanner sc) {
@@ -23,18 +25,16 @@ public class TemploPoseidon extends Zona{
                 + "Luego de caminar, encontró un pasadizo que conducía al siguiente lugar\n"
                 + "pero para pasar debía resolver una adivinanza puesta por el dios Poseidón.");
         System.out.println("\n");
-        System.out.println("Soy el Dios del trueno y del rayo, y mando en el Monte Olimpo. ¿Quien soy?");
-        String respuesta = sc.nextLine();
 
-        if (respuesta.equalsIgnoreCase("zeus")) {
-            System.out.println("Correcto!");
+        Minijuego juegoActual = new Acertijo();
+        boolean esGanador = juegoActual.jugar();
+
+        if(esGanador){
             marcarComoCompletada();
             return true;
         }
-
         jugador.restarRabia();
-        System.out.println("Incorrecto.");
         return false;
-    }
 
+    }
 }
