@@ -1,8 +1,9 @@
 package practicaFabrizzioMedina.modelo.zona;
 
+import practicaFabrizzioMedina.minijuegos.interfazDelMinijuego.Minijuego;
+import practicaFabrizzioMedina.minijuegos.piedraPapelOTijera.PiedraPapelTijera;
 import practicaFabrizzioMedina.modelo.jugador.Jugador;
 
-import java.util.Random;
 import java.util.Scanner;
 
 public class EstadioOlimpo extends  Zona{
@@ -33,24 +34,10 @@ public class EstadioOlimpo extends  Zona{
                         + "Hercules: tienes solo un intento y tienes que ganarme si o si , si empatamos te echare igual de mis tierras");
         System.out.println("\r\n");
 
-        String[] opciones = { "piedra", "papel", "tijera" };
+        Minijuego juegoActual = new PiedraPapelTijera();
+        boolean esGanador = juegoActual.jugar();
 
-        System.out.println("Elige piedra, papel o tijera:");
-        String usuario = sc.nextLine().toLowerCase();
-
-        String hercules = opciones[new Random().nextInt(3)];
-        System.out.println("Hércules eligió: " + hercules);
-
-        if (usuario.equals(hercules)) {
-            System.out.println("Hemos empatado espartano , por lo tanto no podras pasar");
-            jugador.restarRabia();
-            return false;
-        }
-
-        if ((usuario.equals("piedra") && hercules.equals("tijera")) ||
-                (usuario.equals("tijera") && hercules.equals("papel")) ||
-                (usuario.equals("papel") && hercules.equals("piedra"))) {
-
+        if (esGanador) {
             marcarComoCompletada();
             return true;
         }

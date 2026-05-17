@@ -1,8 +1,10 @@
 package practicaFabrizzioMedina.minijuegos;
 
+import practicaFabrizzioMedina.minijuegos.interfazDelMinijuego.Minijuego;
+
 import java.util.Scanner;
 
-public class TresEnRaya implements  Minijuego{
+public class TresEnRaya implements Minijuego {
 
     private Scanner sc;
 

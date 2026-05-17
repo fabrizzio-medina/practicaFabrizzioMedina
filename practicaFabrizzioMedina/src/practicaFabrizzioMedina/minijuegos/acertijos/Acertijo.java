@@ -1,6 +1,6 @@
 package practicaFabrizzioMedina.minijuegos.acertijos;
 
-import practicaFabrizzioMedina.minijuegos.Minijuego;
+import practicaFabrizzioMedina.minijuegos.interfazDelMinijuego.Minijuego;
 
 import java.util.*;
 

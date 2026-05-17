@@ -1,6 +1,6 @@
 package practicaFabrizzioMedina.modelo.zona;
 
-import practicaFabrizzioMedina.minijuegos.Minijuego;
+import practicaFabrizzioMedina.minijuegos.interfazDelMinijuego.Minijuego;
 import practicaFabrizzioMedina.minijuegos.acertijos.Acertijo;
 import practicaFabrizzioMedina.modelo.jugador.Jugador;
 
