@@ -1,4 +1,4 @@
-package practicaFabrizzioMedina.minijuegos;
+package practicaFabrizzioMedina.minijuegos.michi;
 
 import practicaFabrizzioMedina.minijuegos.interfazDelMinijuego.Minijuego;
 
